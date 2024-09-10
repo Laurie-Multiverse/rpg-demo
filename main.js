@@ -30,5 +30,9 @@ function main() {
     console.log(NPC.npcTotal)
     console.log(npc.name)
     NPC.compareType(npc, player);
+
+    // Create an npc with a negative location to trigger error
+    // const npc1 = new NPC("Georgina", "Fairy", [-1, 2]);
+    // console.log(npc1);
 }
 main()
