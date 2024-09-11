@@ -30,5 +30,18 @@ function main() {
     console.log(NPC.npcTotal)
     console.log(npc.name)
     NPC.compareType(npc, player);
+
+    console.log("****** health ******");
+    console.log(person.getHealthString());
+    person.increaseHealth(5);
+    console.log(person.getHealthString());
+    person.decreaseHealth(5);
+    console.log(person.getHealthString());
+    person.increaseHealth(2);
+    console.log(person.getHealthString());
+
+    // throw validation errors
+    // new Person(12345, "Robot");
+    person2.setName(700);
 }
 main()
