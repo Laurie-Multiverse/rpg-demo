@@ -22,5 +22,9 @@ class Person {
         // this is optional, but you can do it for method chaining
         return this;
     }
+
+    static compareType(person1, person2) {
+        return person1.type == person2.type;
+    }
 }
 module.exports = Person;

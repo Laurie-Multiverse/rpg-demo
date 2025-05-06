@@ -1,4 +1,6 @@
-const Person = require ("./Person")
+const Person = require ("./classes/Person");
+const Player = require("./classes/Player");
+const NPC = require('./classes/NPC')
 
 function main() {
     
@@ -15,6 +17,23 @@ function main() {
     // can method-chain if each method returns this
     person2.updateX(1).updateY(-3);
     console.log(person2)
+
+    // Player
+    const player = new Player("Conina", "barbarian", "scissors")
+    console.log(player)
+    console.log(player.introduce())
+
+    // NPC
+    const npc = new NPC('Merlin', 'wizard', [2, 3]);
+    console.log(npc);
+    console.log(npc.introduce());
+    console.log(`There have been ${NPC.npcTotal} NPCs created`);
+
+    const npc2 = new NPC('Fred', 'barbarian');
+    console.log(`There have been ${NPC.npcTotal} NPCs created`);
+
+    console.log(Person.compareType(npc, person))
+    console.log(Person.compareType(npc, npc2))
 }
 
 main();
