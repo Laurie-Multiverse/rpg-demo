@@ -1,8 +1,11 @@
 class Person {
+    #health;
+
     constructor(name, type, location) {
         this.name = name;
         this.type = type;
         this.location = location || [0, 0];
+        this.#health = 100;
     }
 
     introduce() {
@@ -25,6 +28,18 @@ class Person {
 
     static compareType(person1, person2) {
         return person1.type == person2.type;
+    }
+
+    getHealth() {
+        return `${this.#health} HP`
+    }
+
+    takeDamage(val) {
+        this.#health = (this.#health - val < 0) ? 0 : this.#health - val;
+    }
+
+    drinkPotion(val) {
+        this.#health = (this.#health + val > 100) ? 100 : this.#health + val;
     }
 }
 module.exports = Person;

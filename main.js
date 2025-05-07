@@ -34,6 +34,16 @@ function main() {
 
     console.log(Person.compareType(npc, person))
     console.log(Person.compareType(npc, npc2))
+
+    // health (private)
+    // console.log(npc2.#health); // doesn't work, yay
+    console.log(person2.name, person2.getHealth())
+    person2.takeDamage(30)
+    console.log(person2.name, person2.getHealth())
+    person2.drinkPotion(20)
+    console.log(person2.name, person2.getHealth())
+    person2.drinkPotion(20)
+    console.log(person2.name, person2.getHealth())
 }
 
 main();
